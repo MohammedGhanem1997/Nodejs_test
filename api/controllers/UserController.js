@@ -107,7 +107,42 @@ exports.update_user = (req, res, next) => {
         });
 }
 
-
+exports.get_all_users = (req, res, next) => {
+    User.find()
+        .select("name email _id type userImage")
+        .exec()
+        .then(docs => {
+            const response = {
+                count: docs.length,
+                products: docs.map(doc => {
+                    return {
+                        name: doc.name,
+                        email: doc.email,
+                        type: doc.type,
+                        userImage: doc.userImage,
+                        _id: doc._id,
+                        request: {
+                            type: "GET",
+                            url: "http://localhost:3000/users/" + doc._id
+                        }
+                    };
+                })
+            };
+              if (docs.length >= 0) {
+            res.status(200).json(response);
+              } else {
+                  res.status(404).json({
+                      message: 'No entries found'
+                  });
+              }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error: err
+            });
+        });
+}
 
 exports.delete_user = (req, res, next) => {
     User.deleteOne({ _id: req.params.userId })

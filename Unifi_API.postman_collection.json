@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "7f07f517-1aad-4ca8-99e4-0e7f41ea95b7",
+		"name": "Unifi_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create USER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdoYW5lbW0xMzhAZ21haWwuY29tIiwidXNlcklkIjoiNjQ5NmYyMTlkZTAyZDkxYWRkZjA5YTA3IiwiaWF0IjoxNjg3NjE3NDQxLCJleHAiOjE2ODc2MjQ2NDF9.fFnyS-io8Tou2-iUJ0-4BDvD6n5xy80DWxidg3lUNNc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userImage",
+							"type": "file",
+							"src": "/C:/Users/Ghanem/Pictures/Logo Vertical Paixão - ATUAL.png"
+						},
+						{
+							"key": "name",
+							"value": "ghanem",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "ghanem@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPATE USER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdoYW5lbW0xMzhAZ21haWwuY29tIiwidXNlcklkIjoiNjQ5NmYyMTlkZTAyZDkxYWRkZjA5YTA3IiwiaWF0IjoxNjg3NjE3NDQxLCJleHAiOjE2ODc2MjQ2NDF9.fFnyS-io8Tou2-iUJ0-4BDvD6n5xy80DWxidg3lUNNc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"test\",\r\n    \"email\":\"ghanemm138@gmail.com\",\r\n    \"type\":\"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/users/64970795d80e4493ff7af72f",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"64970795d80e4493ff7af72f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@unifi.com\",\r\n    \"password\":\"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHVuaWZpLmNvbSIsInVzZXJJZCI6IjY0OTZmNzhkMDUzNmJlOTFlMDBiZWI0ZiIsInR5cGUiOiJhZG1pbiIsImlhdCI6MTY4NzYyNTg3OCwiZXhwIjoxNjg3NjMzMDc4fQ.O651HVTcf_G8D_5zJtS_1UJVrHctP4Zld9TEp6eavjw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

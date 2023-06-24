@@ -10,7 +10,7 @@ const UserController  = require("../controllers/UserController");
 router.post("/login", AuthController.login_user);
 
 router.post("/",checkAuth,isAdmin,upload.single('userImage'), UserController.create_user);
-router.get("/", checkAuth,isAdmin,UserController.get_specific_user);
+router.get("/", checkAuth,isAdmin,UserController.get_all_users);
 router.get("/:userId", checkAuth,isAdmin,UserController.get_specific_user);
 router.patch("/:userId", checkAuth, UserController.update_user);
 router.delete("/:userId", checkAuth, UserController.delete_user);
