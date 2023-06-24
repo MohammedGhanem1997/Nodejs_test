@@ -124,4 +124,3 @@ exports.delete_user = (req, res, next) => {
             });
         });
 }
-

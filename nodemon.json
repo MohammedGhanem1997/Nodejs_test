@@ -1,0 +1,9 @@
+{
+    "env": {
+        "MONGO_PWD": "Ghanem_unifi",
+        
+        "JWT_SECRET_KEY": "2h",
+        "dbURI":"mongodb+srv://ghanemm138:849PF8PN8PREU7ie@cluster0.ary5cqi.mongodb.net/"
+
+    }
+}

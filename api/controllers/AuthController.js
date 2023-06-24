@@ -51,4 +51,3 @@ exports.login_user = (req, res, next) => {
         });
 }
 
-
